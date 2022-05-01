@@ -1,0 +1,20 @@
+.sign-in-page-root {
+  height: 100vh;
+  background-image: url("../../assets/landing-page-background.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.sign-in {
+  height: auto;
+  margin-top: auto;
+  box-shadow: 0px 0px 12px #242b2e;
+}
+
+#sign-in-button {
+  background-color: #845fdf;
+}
+
+#sign-in-button:hover {
+  background-color: #591dd6;
+}

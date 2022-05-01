@@ -1,0 +1,27 @@
+.home-page-root {
+  height: 100vh;
+  background-image: url("../../assets/landing-page-background.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+a.link {
+  text-decoration: none;
+}
+
+#dashboard-button {
+  background-color: #845fdf;
+}
+
+#dashboard-button:hover {
+  background-color: #591dd6;
+}
+
+.home-page {
+  height: 75vh;
+  box-shadow: 0px 0px 12px #242b2e;
+}
+
+.landing-page-image-div {
+  background-image: url("../../assets/lms-landing-page.jpeg");
+}

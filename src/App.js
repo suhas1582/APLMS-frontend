@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Dashboard from "./screen/dashboard";
+import HomePage from "./screen/home-page/home-page";
+import Signin from "./screen/sign-in";
+import { isSignedIn } from "./utils";
 
-function App() {
+const App = () => {
+  const authProtectedRoutes = (screen) => {
+    if (isSignedIn()) {
+      return screen;
+    } else {
+      return <Signin />;
+    }
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/about" element={<HomePage />} />
+      <Route path="/contact" element={<HomePage />} />
+      <Route path="/signin" element={<Signin />} />
+      <Route path="/dashboard" element={authProtectedRoutes(<Dashboard />)} />
+    </Routes>
   );
-}
+};
 
 export default App;
